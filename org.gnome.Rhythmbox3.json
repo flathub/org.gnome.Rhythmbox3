@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Rhythmbox3",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
+    "runtime-version": "3.26",
     "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
@@ -25,7 +25,10 @@
         "--filesystem=xdg-music",
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--own-name=org.mpris.MediaPlayer2.rhythmbox",
+        "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
+        "--talk-name=org.gnome.SettingsDaemon"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
@@ -50,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpeas/1.20/libpeas-1.20.0.tar.xz",
-                    "sha256": "f392fffe2dc00072a51bb2a1b274224a06bdc5f9c3b3c0ac4816909e9933d354"
+                    "url": "https://download.gnome.org/sources/libpeas/1.22/libpeas-1.22.0.tar.xz",
+                    "sha256": "5b2fc0f53962b25bca131a5ec0139e6fef8e254481b6e777975f7a1d2702a962"
                 }
             ]
         },
@@ -60,20 +63,20 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gmime/2.6/gmime-2.6.20.tar.xz",
-                    "sha256": "e0a170fb264c2ae4cecd852f4e7aaddb8d58e8f3f0b569ce2d2a4704f55bdf65"
+                    "url": "https://download.gnome.org/sources/gmime/2.6/gmime-2.6.23.tar.xz",
+                    "sha256": "7149686a71ca42a1390869b6074815106b061aaeaaa8f2ef8c12c191d9a79f6a"
                 }
             ],
             "cleanup": [ "/include", "/share/vala" ]
         },
         {
             "name": "totem-pl-parser",
-            "config-opts": [ "--disable-static" ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/totem-pl-parser/3.10/totem-pl-parser-3.10.7.tar.xz",
-                    "sha256": "9c8285bc3131faa309d5cba5a919d5166abc2b8cc5a0c850fe861be8b14e089c"
+                    "url": "https://download.gnome.org/sources/totem-pl-parser/3.26/totem-pl-parser-3.26.0.tar.xz",
+                    "sha256": "f153a53391e9b42fed5cb6ce62322a58e323fde6ec4a54d8ba4d376cf4c1fbcb"
                 }
             ],
             "cleanup": [ "/include" ]
@@ -83,8 +86,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/rhythmbox/3.4/rhythmbox-3.4.1.tar.xz",
-                    "sha256": "039f86661cba495f9429df6572fa79e68279635809e52fa0d19f57e8db8341b6"
+                    "url": "https://download.gnome.org/sources/rhythmbox/3.4/rhythmbox-3.4.2.tar.xz",
+                    "sha256": "c27622fb7658d3c8e935937a562ebd8a65f5316a12694d6a06cb17f790b6ec43"
                 }
             ]
         }

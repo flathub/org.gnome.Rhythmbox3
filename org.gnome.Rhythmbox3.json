@@ -26,9 +26,14 @@
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        /* MPRIS */
         "--own-name=org.mpris.MediaPlayer2.rhythmbox",
+        /* dbus media server */
+        "--own-name=org.gnome.UPnP.MediaServer2.Rhythmbox",
+        /* media keys */
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        "--talk-name=org.gnome.SettingsDaemon"
+        /* libnotify */
+        "--talk-name=org.freedesktop.Notifications"
     ],
     "build-options" : {
         "cflags": "-O2 -g",

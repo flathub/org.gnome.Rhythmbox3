@@ -146,6 +146,11 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/rhythmbox/3.4/rhythmbox-3.4.2.tar.xz",
                     "sha256": "c27622fb7658d3c8e935937a562ebd8a65f5316a12694d6a06cb17f790b6ec43"
+                },
+                /* Disable DAAP preferences as only connecting not broadcasting or searching works as they need MDNS service */
+                {
+                    "type": "patch",
+                    "path": "disable-daap-preferences.patch"
                 }
             ]
         }

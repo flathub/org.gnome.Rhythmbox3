@@ -1,0 +1,14 @@
+--- rhythmbox-3.4.2/plugins/daap/rb-daap-plugin.c.orig	2017-10-08 03:07:13.000000000 +0100
++++ rhythmbox-3.4.2/plugins/daap/rb-daap-plugin.c	2018-02-09 01:32:56.397621163 +0000
+@@ -139,9 +139,7 @@
+ 
+ RB_DEFINE_PLUGIN(RB_TYPE_DAAP_PLUGIN,
+ 		 RBDaapPlugin,
+-		 rb_daap_plugin,
+-		 (G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+-						peas_gtk_configurable_iface_init)))
++		 rb_daap_plugin,)
+ 
+ static void
+ rb_daap_plugin_init (RBDaapPlugin *plugin)
+

@@ -95,9 +95,10 @@
                     "url": "https://pypi.python.org/packages/ad/1b/76adc363212c642cabbf9329457a918308c0b9b5d38ce04d541a67255174/dbus-python-1.2.4.tar.gz#md5=7372a588c83a7232b4e08159bfd48fe5",
                     "sha256": "e2f1d6871f74fba23652e51d10873e54f71adab0525833c19bad9e99b1b2f9cc"
                 }
-            ]
+            ],
+            "cleanup": ["/lib", "/share/doc"]
         },
-        /* libdmapsharing needs avahi or howl or libdns_sd */
+        /* libdmapsharing needs development headers of avahi or howl or libdns_sd */
         {
             "name": "avahi",
             "config-opts": [ "--with-distro=none", "--disable-gtk", "--disable-gtk3", "--disable-libdaemon", "--disable-manpages", "--disable-mono", "--disable-qt3", "--disable-qt4"  ],
@@ -107,7 +108,8 @@
                     "url": "https://github.com/lathiat/avahi/archive/v0.7.tar.gz",
                     "sha256": "fd45480cef0559b3eab965ea3ad4fe2d7a8f27db32c851a032ee0b487c378329"
                 }
-            ]
+            ],
+            "cleanup": ["/bin"]
         },
         /* libdmapsharing needs gee-0.8 */
         {
@@ -126,7 +128,7 @@
 	        }
 	    ]
 	},
-        /* for DAAP support */
+        /* libdmapsharing is required for DAAP support */
         {
             "name": "libdmapsharing",
             "sources": [

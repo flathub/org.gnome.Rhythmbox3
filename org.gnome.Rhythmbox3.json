@@ -86,6 +86,57 @@
             ],
             "cleanup": [ "/include" ]
         },
+        /* avahi needs dbus-python */
+        {
+            "name": "dbus-python",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://pypi.python.org/packages/ad/1b/76adc363212c642cabbf9329457a918308c0b9b5d38ce04d541a67255174/dbus-python-1.2.4.tar.gz#md5=7372a588c83a7232b4e08159bfd48fe5",
+                    "sha256": "e2f1d6871f74fba23652e51d10873e54f71adab0525833c19bad9e99b1b2f9cc"
+                }
+            ]
+        },
+        /* libdmapsharing needs avahi or howl or libdns_sd */
+        {
+            "name": "avahi",
+            "config-opts": [ "--enable-compat-libdns_sd", "--with-distro=none", "--disable-gtk", "--disable-gtk3", "--disable-libdaemon", "--disable-manpages", "--disable-mono", "--disable-monodoc", "--disable-qt3", "--disable-qt4"  ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/lathiat/avahi/archive/v0.7.tar.gz",
+                    "sha256": "fd45480cef0559b3eab965ea3ad4fe2d7a8f27db32c851a032ee0b487c378329"
+                }
+            ]
+        },
+        /* libdmapsharing needs gee-0.8 */
+        {
+		    "name": "libgee",
+		    "build-options" : {
+		        "env": {
+		            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+		            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+		        }
+		    },
+		    "sources": [
+		        {
+		            "type": "archive",
+		            "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
+		            "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
+		        }
+		    ]
+		},
+        /* for DAAP support */
+        {
+            "name": "libdmapsharing",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/GNOME/libdmapsharing/archive/LIBDMAPSHARING_2_9_39.tar.gz",
+                    "sha256": "0a94bdcd3c991145986fa0b18b802cf3a677db1eafa9e81ddc4f64c21a4c4a3b"
+                }
+            ]
+        },
         {
             "name": "rhythmbox",
             "sources": [

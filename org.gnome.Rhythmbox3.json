@@ -100,7 +100,7 @@
         /* libdmapsharing needs avahi or howl or libdns_sd */
         {
             "name": "avahi",
-            "config-opts": [ "--enable-compat-libdns_sd", "--with-distro=none", "--disable-gtk", "--disable-gtk3", "--disable-libdaemon", "--disable-manpages", "--disable-mono", "--disable-monodoc", "--disable-qt3", "--disable-qt4"  ],
+            "config-opts": [ "--with-distro=none", "--disable-gtk", "--disable-gtk3", "--disable-libdaemon", "--disable-manpages", "--disable-mono", "--disable-qt3", "--disable-qt4"  ],
             "sources": [
                 {
                     "type": "archive",
@@ -111,21 +111,21 @@
         },
         /* libdmapsharing needs gee-0.8 */
         {
-		    "name": "libgee",
-		    "build-options" : {
-		        "env": {
-		            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-		            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-		        }
-		    },
-		    "sources": [
-		        {
-		            "type": "archive",
-		            "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
-		            "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
-		        }
-		    ]
-		},
+	    "name": "libgee",
+	    "build-options" : {
+	        "env": {
+	            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+	            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+	        }
+	    },
+	    "sources": [
+	        {
+	            "type": "archive",
+	            "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
+	            "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
+	        }
+	    ]
+	},
         /* for DAAP support */
         {
             "name": "libdmapsharing",

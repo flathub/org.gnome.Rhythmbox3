@@ -96,7 +96,7 @@
                     "sha256": "e2f1d6871f74fba23652e51d10873e54f71adab0525833c19bad9e99b1b2f9cc"
                 }
             ],
-            "cleanup": ["/lib", "/share/doc"]
+            "cleanup": [ "*" ]
         },
         /* libdmapsharing needs development headers of avahi or howl or libdns_sd */
         {
@@ -109,7 +109,7 @@
                     "sha256": "fd45480cef0559b3eab965ea3ad4fe2d7a8f27db32c851a032ee0b487c378329"
                 }
             ],
-            "cleanup": ["/bin"]
+            "cleanup": [ "/bin" ]
         },
         /* libdmapsharing needs gee-0.8 */
         {

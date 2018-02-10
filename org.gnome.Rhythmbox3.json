@@ -33,7 +33,9 @@
         /* media keys */
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
         /* libnotify */
-        "--talk-name=org.freedesktop.Notifications"
+        "--talk-name=org.freedesktop.Notifications",
+        /* DAAP broadcast and discovery */
+        "--system-talk-name=org.freedesktop.Avahi"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
@@ -86,48 +88,47 @@
             ],
             "cleanup": [ "/include" ]
         },
-        /* avahi needs dbus-python */
-        {
-            "name": "dbus-python",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/ad/1b/76adc363212c642cabbf9329457a918308c0b9b5d38ce04d541a67255174/dbus-python-1.2.4.tar.gz#md5=7372a588c83a7232b4e08159bfd48fe5",
-                    "sha256": "e2f1d6871f74fba23652e51d10873e54f71adab0525833c19bad9e99b1b2f9cc"
-                }
-            ],
-            "cleanup": [ "*" ]
-        },
         /* libdmapsharing needs development headers of avahi or howl or libdns_sd */
         {
             "name": "avahi",
-            "config-opts": [ "--with-distro=none", "--disable-gtk", "--disable-gtk3", "--disable-libdaemon", "--disable-manpages", "--disable-mono", "--disable-qt3", "--disable-qt4"  ],
+            "cleanup": [ "/bin" ],
+            "config-opts": [
+                "--with-distro=none",
+                "--disable-libdaemon",
+                "--disable-core-docs",
+                "--disable-manpages",
+                "--disable-mono",
+                "--disable-qt3",
+                "--disable-qt4",
+                "--disable-python",
+                "--disable-gtk",
+                "--disable-gtk3"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lathiat/avahi/archive/v0.7.tar.gz",
-                    "sha256": "fd45480cef0559b3eab965ea3ad4fe2d7a8f27db32c851a032ee0b487c378329"
+                    "url": "https://avahi.org/download/avahi-0.7.tar.gz",
+                    "sha256": "57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804"
                 }
-            ],
-            "cleanup": [ "/bin" ]
+            ]
         },
         /* libdmapsharing needs gee-0.8 */
         {
-	    "name": "libgee",
-	    "build-options" : {
-	        "env": {
-	            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
-	            "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
-	        }
-	    },
-	    "sources": [
-	        {
-	            "type": "archive",
-	            "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
-	            "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
-	        }
-	    ]
-	},
+            "name": "libgee",
+            "build-options" : {
+                "env": {
+                    "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+                    "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+                }
+            },
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
+                    "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
+                }
+            ]
+        },
         /* libdmapsharing is required for DAAP support */
         {
             "name": "libdmapsharing",
@@ -146,11 +147,6 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/rhythmbox/3.4/rhythmbox-3.4.2.tar.xz",
                     "sha256": "c27622fb7658d3c8e935937a562ebd8a65f5316a12694d6a06cb17f790b6ec43"
-                },
-                /* Disable DAAP preferences as only connecting not broadcasting or searching works as they need MDNS service */
-                {
-                    "type": "patch",
-                    "path": "disable-daap-preferences.patch"
                 },
                 /* Media keys were using incorrect dbus name */
                 {

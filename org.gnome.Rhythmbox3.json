@@ -151,6 +151,11 @@
                 {
                     "type": "patch",
                     "path": "disable-daap-preferences.patch"
+                },
+                /* Media keys do not function without this */
+                {
+                    "type": "patch",
+                    "path": "fix-media-player-keys-dbus-name.patch"
                 }
             ]
         }

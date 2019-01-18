@@ -145,18 +145,10 @@
             "name": "rhythmbox",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/rhythmbox/3.4/rhythmbox-3.4.2.tar.xz",
-                    "sha256": "c27622fb7658d3c8e935937a562ebd8a65f5316a12694d6a06cb17f790b6ec43"
-                },
-                /* Media keys were using incorrect dbus name */
-                {
-                    "type": "patch",
-                    "path": "fix-media-player-keys-dbus-name.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-fmradio-Fix-build-with-GStreamer-master.patch"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
+                    "tag": "v3.4.3",
+                    "commit": "8d0325421da990afab2e1c704648e1ad17378141"
                 }
             ]
         }

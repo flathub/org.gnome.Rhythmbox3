@@ -66,24 +66,14 @@
             ]
         },
         {
-            "name": "gmime",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gmime/2.6/gmime-2.6.23.tar.xz",
-                    "sha256": "7149686a71ca42a1390869b6074815106b061aaeaaa8f2ef8c12c191d9a79f6a"
-                }
-            ],
-            "cleanup": [ "/include", "/share/vala" ]
-        },
-        {
             "name": "totem-pl-parser",
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/totem-pl-parser/3.26/totem-pl-parser-3.26.0.tar.xz",
-                    "sha256": "f153a53391e9b42fed5cb6ce62322a58e323fde6ec4a54d8ba4d376cf4c1fbcb"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/totem-pl-parser.git",
+                    "commit": "fe036259403c5276b14e1fe1545f88180ce1ad84",
+                    "tag": "V_3_26_2"
                 }
             ],
             "cleanup": [ "/include" ]

@@ -35,7 +35,9 @@
         /* libnotify */
         "--talk-name=org.freedesktop.Notifications",
         /* DAAP broadcast and discovery */
-        "--system-talk-name=org.freedesktop.Avahi"
+        "--system-talk-name=org.freedesktop.Avahi",
+        /* totem-pl-parser http support, for podcasts and streaming */
+        "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*"
     ],
     "build-options" : {
         "cflags": "-O2 -g",

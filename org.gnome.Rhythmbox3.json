@@ -37,7 +37,9 @@
         /* DAAP broadcast and discovery */
         "--system-talk-name=org.freedesktop.Avahi",
         /* totem-pl-parser http support, for podcasts and streaming */
-        "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*"
+        "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*",
+        /* See #16 */
+        "--env=GIO_USE_VOLUME_MONITOR=unix"
     ],
     "build-options" : {
         "cflags": "-O2 -g",

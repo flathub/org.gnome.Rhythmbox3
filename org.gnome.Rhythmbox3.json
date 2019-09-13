@@ -60,12 +60,13 @@
         },
         {
             "name": "libpeas",
-            "cleanup": [ "/bin/*", "/lib/peas-demo" ],
+            "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpeas/1.22/libpeas-1.22.0.tar.xz",
-                    "sha256": "5b2fc0f53962b25bca131a5ec0139e6fef8e254481b6e777975f7a1d2702a962"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
+                    "commit": "f9962a516ead8ce20531d1b23e1b656caecd9274",
+                    "tag": "libpeas-1.24.0"
                 }
             ]
         },

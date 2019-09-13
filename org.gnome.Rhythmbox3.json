@@ -83,6 +83,7 @@
             ],
             "cleanup": [ "/include" ]
         },
+        "shared-modules/intltool/intltool-0.51.json",
         /* libdmapsharing needs development headers of avahi or howl or libdns_sd */
         {
             "name": "avahi",

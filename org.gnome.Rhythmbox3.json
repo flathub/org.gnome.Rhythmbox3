@@ -150,6 +150,10 @@
                 {
                     "type": "patch",
                     "path": "update-appdata.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-artsearch-Fix-warning-when-track-doesn-t-have-an-alb.patch"
                 }
             ]
         }

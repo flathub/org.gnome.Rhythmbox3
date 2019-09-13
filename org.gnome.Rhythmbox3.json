@@ -143,6 +143,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
                     "tag": "v3.4.3",
                     "commit": "8d0325421da990afab2e1c704648e1ad17378141"
+                },
+                {
+                    "type": "patch",
+                    "path": "update-appdata.patch"
                 }
             ]
         }

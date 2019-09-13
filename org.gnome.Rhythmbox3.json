@@ -139,6 +139,7 @@
         },
         {
             "name": "rhythmbox",
+            "config-opts": [ "--disable-more-warnings" ],
             "sources": [
                 {
                     "type": "git",

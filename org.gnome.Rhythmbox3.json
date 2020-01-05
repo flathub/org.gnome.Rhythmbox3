@@ -15,8 +15,8 @@
         "--share=ipc", "--socket=x11",
         /* Wayland access */
         "--socket=wayland",
-        /* OpenGL access */
-        "--device=dri",
+        /* OpenGL access and audio CDs */
+        "--device=all",
         /* Needs to talk to the network */
         "--share=network",
         /* Play sounds */
@@ -36,10 +36,10 @@
         "--talk-name=org.freedesktop.Notifications",
         /* DAAP broadcast and discovery */
         "--system-talk-name=org.freedesktop.Avahi",
-        /* totem-pl-parser http support, for podcasts and streaming */
+        /* totem-pl-parser http support, for podcasts and streaming, and optical media detection */
         "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*",
-        /* See #16 */
-        "--env=GIO_USE_VOLUME_MONITOR=unix"
+        /* FIXME See #16 */
+        "--env=GIO_USE_VOLUME_MONITOR=udisks2"
     ],
     "build-options" : {
         "cflags": "-O2 -g",

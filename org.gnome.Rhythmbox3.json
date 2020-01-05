@@ -17,7 +17,7 @@
         "--socket=wayland",
         /* OpenGL access */
         "--device=dri",
-        /* Needs to talk to the network: */
+        /* Needs to talk to the network */
         "--share=network",
         /* Play sounds */
         "--socket=pulseaudio",

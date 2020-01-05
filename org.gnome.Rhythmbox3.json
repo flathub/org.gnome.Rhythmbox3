@@ -7,7 +7,7 @@
     "command": "rhythmbox",
     "rename-appdata-file": "rhythmbox.appdata.xml",
     "rename-desktop-file": "rhythmbox.desktop",
-    "rename-icon": "rhythmbox",
+    "rename-icon": "org.gnome.Rhythmbox",
     "copy-icon": true,
     "tags": [],
     "finish-args": [
@@ -144,16 +144,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "tag": "v3.4.3",
-                    "commit": "8d0325421da990afab2e1c704648e1ad17378141"
-                },
-                {
-                    "type": "patch",
-                    "path": "update-appdata.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-artsearch-Fix-warning-when-track-doesn-t-have-an-alb.patch"
+                    "tag": "v3.4.4",
+                    "commit": "473a28752bfd6260d74f41e3b0d737f71495f4a8"
                 }
             ]
         }

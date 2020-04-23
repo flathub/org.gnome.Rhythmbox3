@@ -4,10 +4,6 @@
     "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
-    "rename-appdata-file": "rhythmbox.appdata.xml",
-    "rename-desktop-file": "rhythmbox.desktop",
-    "rename-icon": "org.gnome.Rhythmbox",
-    "copy-icon": true,
     "tags": [],
     "finish-args": [
         /* X11 + XShm access */
@@ -143,8 +139,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "tag": "v3.4.4",
-                    "commit": "473a28752bfd6260d74f41e3b0d737f71495f4a8"
+                    "commit": "9935dce6a39c2872da5a2765a0efe490094d3354"
                 }
             ]
         }

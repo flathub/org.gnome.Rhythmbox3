@@ -2,7 +2,6 @@
     "app-id": "org.gnome.Rhythmbox3",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.38",
-    "default-branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
     "rename-appdata-file": "rhythmbox.appdata.xml",

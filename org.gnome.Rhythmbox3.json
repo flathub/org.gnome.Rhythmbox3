@@ -14,9 +14,9 @@
         "--share=ipc", "--socket=fallback-x11",
         /* Wayland access */
         "--socket=wayland",
-        /* OpenGL access */
-        "--device=dri",
-        /* Needs to talk to the network: */
+        /* OpenGL access and audio CDs */
+        "--device=all",
+        /* Needs to talk to the network */
         "--share=network",
         /* Play sounds */
         "--socket=pulseaudio",
@@ -35,10 +35,12 @@
         "--talk-name=org.freedesktop.Notifications",
         /* DAAP broadcast and discovery */
         "--system-talk-name=org.freedesktop.Avahi",
-        /* totem-pl-parser http support, for podcasts and streaming */
+        /* totem-pl-parser http support, for podcasts and streaming, and optical media detection */
         "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*",
-        /* See #16 */
-        "--env=GIO_USE_VOLUME_MONITOR=unix"
+        /* FIXME See #16 */
+        "--env=GIO_USE_VOLUME_MONITOR=udisks2",
+        /* Ensure cdda gstreamer plugin is picked found for audio CD's */
+        "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
@@ -133,6 +135,46 @@
                     "type": "archive",
                     "url": "https://github.com/GNOME/libdmapsharing/archive/LIBDMAPSHARING_2_9_39.tar.gz",
                     "sha256": "0a94bdcd3c991145986fa0b18b802cf3a677db1eafa9e81ddc4f64c21a4c4a3b"
+                }
+            ]
+        },
+        /* gst-plugins-base needs cdparanoia to add support for cdda */
+        {
+            "name": "cdparanoia",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cp /usr/share/automake-*/config.{sub,guess} .",
+                "./configure --prefix=/app",
+                "make all slib",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz",
+                    "sha256": "005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df"
+                },
+                {
+                    "type": "patch",
+                    "path": "cdparanoia-use-proper-gnu-config-files.patch"
+                }
+            ]
+        },
+        /* To play cdda */
+        {
+            "name": "gst-plugins-base",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dauto_features=disabled",
+                "-Dcdparanoia=enabled"
+            ],
+            "cleanup": [ "*.la", "/share/gtk-doc" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
+                    "branch" : "1.16.2",
+                    "commit" : "9d3581b2e6f12f0b7e790d1ebb63b90cf5b1ef4e"
                 }
             ]
         },

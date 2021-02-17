@@ -135,6 +135,9 @@
         {
             "name": "rhythmbox",
             "config-opts": [ "--disable-more-warnings" ],
+            "post-install": [
+                "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='rhythmbox.desktop;' /app/share/applications/org.gnome.Rhythmbox3.desktop"
+            ],
             "sources": [
                 {
                     "type": "git",

@@ -143,7 +143,11 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
                     "commit": "9935dce6a39c2872da5a2765a0efe490094d3354"
-                }
+                },
+		{
+		   "type": "patch",
+		   "path": "0001-metadata-Install-debugging-tool.patch"
+		}
             ]
         }
     ]

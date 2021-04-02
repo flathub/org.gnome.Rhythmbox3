@@ -1,0 +1,34 @@
+From 7ed4beecb4cbb1129400c014444b0861a21efc32 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 2 Apr 2021 16:54:44 +0200
+Subject: [PATCH] metadata: Install debugging tool
+
+---
+ metadata/Makefile.am | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/metadata/Makefile.am b/metadata/Makefile.am
+index 0f46b7425..725b9cf5d 100644
+--- a/metadata/Makefile.am
++++ b/metadata/Makefile.am
+@@ -54,7 +54,7 @@ librbmetadatasvc_la_SOURCES =				\
+ 	rb-metadata-gst-common.h			\
+ 	rb-metadata-gst-common.c
+ 
+-libexec_PROGRAMS = rhythmbox-metadata
++libexec_PROGRAMS = rhythmbox-metadata test-metadata
+ rhythmbox_metadata_SOURCES = 				\
+ 	rb-metadata-dbus-service.c
+ 
+@@ -64,8 +64,6 @@ rhythmbox_metadata_LDADD = 				\
+ 	$(RHYTHMBOX_LIBS)				\
+ 	-lgstpbutils-1.0
+ 
+-# test program?
+-noinst_PROGRAMS = test-metadata
+ test_metadata_SOURCES =					\
+ 	test-metadata.c
+ 
+-- 
+2.30.2
+

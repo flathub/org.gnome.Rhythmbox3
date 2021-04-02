@@ -23,8 +23,6 @@
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         /* MPRIS */
         "--own-name=org.mpris.MediaPlayer2.rhythmbox",
-        /* dbus media server */
-        "--own-name=org.gnome.UPnP.MediaServer2.Rhythmbox",
         /* media keys */
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
         /* libnotify */
@@ -136,7 +134,8 @@
             "name": "rhythmbox",
             "config-opts": [ "--disable-more-warnings" ],
             "post-install": [
-                "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='rhythmbox.desktop;' /app/share/applications/org.gnome.Rhythmbox3.desktop"
+                "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='rhythmbox.desktop;' /app/share/applications/org.gnome.Rhythmbox3.desktop",
+                "rm -rf /app/lib/rhythmbox/plugins/dbus-media-server/"
             ],
             "sources": [
                 {

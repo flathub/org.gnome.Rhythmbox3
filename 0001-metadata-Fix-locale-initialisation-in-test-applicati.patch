@@ -1,0 +1,33 @@
+From 9c8c4176c86f893028b4566022dd481075804262 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 2 Apr 2021 17:05:30 +0200
+Subject: [PATCH] metadata: Fix locale initialisation in test application
+
+---
+ metadata/test-metadata.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/metadata/test-metadata.c b/metadata/test-metadata.c
+index 6ece4358d..e968c8248 100644
+--- a/metadata/test-metadata.c
++++ b/metadata/test-metadata.c
+@@ -31,6 +31,7 @@
+  */
+ 
+ #include <config.h>
++#include <locale.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -147,6 +148,8 @@ int main(int argc, char **argv)
+ 	gboolean retval;
+ 	GError *error = NULL;
+ 
++	setlocale (LC_ALL, "");
++
+ 	context = g_option_context_new (NULL);
+ 	g_option_context_add_main_entries (context, entries, NULL);
+ 	retval = g_option_context_parse (context, &argc, &argv, &error);
+-- 
+2.30.2
+

@@ -147,6 +147,10 @@
 		{
 		   "type": "patch",
 		   "path": "0001-metadata-Install-debugging-tool.patch"
+		},
+		{
+			"type": "patch",
+			"path": "0001-metadata-Fix-locale-initialisation-in-test-applicati.patch"
 		}
             ]
         }

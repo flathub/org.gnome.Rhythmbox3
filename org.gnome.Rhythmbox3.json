@@ -93,12 +93,15 @@
         {
             "name": "totem-pl-parser",
             "buildsystem": "meson",
+            "config-opts": [
+                "-Denable-uchardet=yes"
+            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/totem-pl-parser.git",
-                    "commit": "fe036259403c5276b14e1fe1545f88180ce1ad84",
-                    "tag": "V_3_26_2"
+                    "commit": "1431f520fb82f98873c3870f2bbe8eba4d0e670a",
+                    "tag": "V_3_26_6"
                 }
             ],
             "cleanup": [ "/include" ]

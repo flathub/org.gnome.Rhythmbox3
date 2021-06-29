@@ -171,7 +171,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "commit": "9935dce6a39c2872da5a2765a0efe490094d3354"
+                    "commit": "c3e7511a393ce4857133af8ccbc95382a8be8ab5"
                 }
             ]
         }

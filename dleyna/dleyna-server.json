@@ -1,0 +1,12 @@
+{
+    "name": "dleyna-server",
+    "buildsystem": "meson",
+    "config-opts": [ "-Dserver_name=org.gnome.Rhythmbox3.dleyna-server" ],
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://github.com/phako/dleyna-server.git",
+            "commit": "d4fbaf700a1479ad11de60d56a4b43b5dcf7c9ca"
+        }
+    ]
+}

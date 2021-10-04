@@ -41,6 +41,58 @@
     "cleanup": [ "/include", "/share/bash-completion" ],
     "modules": [
         {
+            "name": "grilo",
+            "buildsystem": "meson",
+            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/grilo.git",
+                    "commit": "b3372233ee509676ab4408f049549c1020cff7a1",
+                    "tag": "grilo-0.3.13"
+                }
+            ],
+            "cleanup": [ "/include" ]
+        },
+        "dleyna/gssdp.json",
+        "dleyna/gupnp.json",
+        "dleyna/gupnp-av.json",
+        "dleyna/gupnp-dlna.json",
+        "dleyna/dleyna-core.json",
+        "dleyna/dleyna-connector-dbus.json",
+        "dleyna/dleyna-server.json",
+        {
+            "name": "grilo-plugins",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Denable-filesystem=no",
+                "-Denable-optical-media=no",
+                "-Denable-youtube=no",
+                "-Denable-bookmarks=no",
+                "-Denable-lua-factory=no",
+                "-Denable-metadata-store=no",
+                "-Denable-vimeo=no",
+                "-Denable-tracker=no",
+                "-Denable-tracker3=no",
+                "-Denable-local-metadata=no",
+                "-Denable-dleyna=yes",
+                "-Denable-thetvdb=no",
+                "-Denable-tmdb=no",
+                "-Denable-freebox=no",
+                "-Denable-opensubtitles=no",
+                "-Ddleyna-service-name=org.gnome.Rhythmbox3.dleyna-server"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
+                    "commit": "660041b7b6460bbe4becef1b675f4f96189cba2b",
+                    "tag": "grilo-plugins-0.3.13"
+                }
+            ],
+            "cleanup": [ "/include" ]
+        },
+        {
             "name": "tdb",
             "sources": [
                 {

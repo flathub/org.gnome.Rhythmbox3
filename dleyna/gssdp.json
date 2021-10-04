@@ -1,0 +1,12 @@
+{
+    "name": "gssdp",
+    "buildsystem": "meson",
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/GNOME/gssdp.git",
+            "commit": "a4eb74313a3df17c3ac5b99f3131522e6e8bccf4",
+            "tag": "gssdp-1.2.3"
+        }
+    ]
+}

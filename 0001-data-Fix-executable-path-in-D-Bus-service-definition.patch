@@ -1,0 +1,27 @@
+From b5489ded82a4b209234b84f4252c31e58f2c2527 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 3 May 2022 10:23:47 +0200
+Subject: [PATCH] data: Fix executable path in D-Bus service definition
+
+Fix bin directory being relative to the prefix rather than absolute:
+WARNING: Binary not found for Exec line in /home/hadess/Projects/Flathub/org.gnome.Rhythmbox3/_build/export/share/dbus-1/services/org.gnome.Rhythmbox3.service: bin/rhythmbox
+---
+ data/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/meson.build b/data/meson.build
+index b75fc2616..483513c43 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -20,7 +20,7 @@ foreach desktop_file : desktop_files
+ endforeach
+ 
+ service_conf = configuration_data()
+-service_conf.set('bindir', get_option('bindir'))
++service_conf.set('bindir', get_option('prefix') / get_option('bindir'))
+ 
+ service = 'org.gnome.Rhythmbox3.service'
+ 
+-- 
+2.35.1
+

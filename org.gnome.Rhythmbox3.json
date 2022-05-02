@@ -214,7 +214,8 @@
         },
         {
             "name": "rhythmbox",
-            "config-opts": [ "--disable-more-warnings" ],
+            "buildsystem": "meson",
+            "config-opts": [ "-Ddaap=enabled" ],
             "post-install": [
                 "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='rhythmbox.desktop;' /app/share/applications/org.gnome.Rhythmbox3.desktop",
                 "rm -rf /app/lib/rhythmbox/plugins/dbus-media-server/"
@@ -223,7 +224,16 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "commit": "c3e7511a393ce4857133af8ccbc95382a8be8ab5"
+                    "commit": "015ce7418d2bc6486f51f8fc0c21a4514fcbc50a",
+                    "tag": "v3.4.5"
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "0001-data-Fix-executable-path-in-D-Bus-service-definition.patch",
+                        "0001-data-Update-appdata-screenshot-to-an-existing-one.patch",
+                        "0001-build-Update-icon-cache-and-schemas-on-install.patch"
+                    ]
                 }
             ]
         }

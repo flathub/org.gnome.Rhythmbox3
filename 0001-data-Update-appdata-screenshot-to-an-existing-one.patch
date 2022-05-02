@@ -1,0 +1,27 @@
+From b8ced83084771a22ecac2fc623b040ba8ba1fc9f Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 3 May 2022 11:18:28 +0200
+Subject: [PATCH] data: Update appdata screenshot to an existing one
+
+people.gnome.org was closed down, so host the main window screenshot
+on gitlab instead.
+---
+ data/org.gnome.Rhythmbox3.appdata.xml.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/org.gnome.Rhythmbox3.appdata.xml.in b/data/org.gnome.Rhythmbox3.appdata.xml.in
+index c1b239559..0c20d4d16 100644
+--- a/data/org.gnome.Rhythmbox3.appdata.xml.in
++++ b/data/org.gnome.Rhythmbox3.appdata.xml.in
+@@ -25,7 +25,7 @@
+   <url type="help">https://help.gnome.org/users/rhythmbox/stable/</url>
+   <screenshots>
+     <screenshot type="default">
+-      <image>https://people.gnome.org/~jmatthew/rhythmbox-appdata-screenshot.png</image>
++      <image>https://gitlab.gnome.org/GNOME/rhythmbox/-/raw/wip/hadess/fix-appdata-screenshot/data/screenshots/rhythmbox-main-window.png</image>
+     </screenshot>
+   </screenshots>
+   <update_contact>jmatthew@gnome.org</update_contact>
+-- 
+2.35.1
+

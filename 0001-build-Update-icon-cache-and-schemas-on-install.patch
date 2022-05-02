@@ -1,0 +1,48 @@
+From 74ec0b5cd8fec9d6053e09058700d044c5b19328 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 3 May 2022 11:46:13 +0200
+Subject: [PATCH] build: Update icon cache and schemas on install
+
+---
+ meson.build           |  2 ++
+ meson_post_install.py | 15 +++++++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 meson_post_install.py
+
+diff --git a/meson.build b/meson.build
+index 0a40c47c9..972a20108 100644
+--- a/meson.build
++++ b/meson.build
+@@ -269,6 +269,8 @@ pkg.generate(
+   ]
+ )
+ 
++meson.add_install_script('meson_post_install.py')
++
+ configure_file(input : 'config.h.meson',
+   output : 'config.h',
+ configuration : cdata)
+diff --git a/meson_post_install.py b/meson_post_install.py
+new file mode 100644
+index 000000000..bf320a9dc
+--- /dev/null
++++ b/meson_post_install.py
+@@ -0,0 +1,15 @@
++#!/usr/bin/env python3
++
++import os
++import subprocess
++
++install_prefix = os.environ['MESON_INSTALL_PREFIX']
++icondir = os.path.join(install_prefix, 'share', 'icons', 'hicolor')
++schemadir = os.path.join(install_prefix, 'share', 'glib-2.0', 'schemas')
++
++if not os.environ.get('DESTDIR'):
++  print('Update icon cache...')
++  subprocess.call(['gtk-update-icon-cache', '-f', '-t', icondir])
++
++  print('Compiling gsettings schemas...')
++  subprocess.call(['glib-compile-schemas', schemadir])
+-- 
+2.35.1
+

@@ -224,13 +224,11 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "commit": "015ce7418d2bc6486f51f8fc0c21a4514fcbc50a",
-                    "tag": "v3.4.5"
+                    "commit": "b5489ded82a4b209234b84f4252c31e58f2c2527"
                 },
                 {
                     "type": "patch",
                     "paths": [
-                        "0001-data-Fix-executable-path-in-D-Bus-service-definition.patch",
                         "0001-data-Update-appdata-screenshot-to-an-existing-one.patch",
                         "0001-build-Update-icon-cache-and-schemas-on-install.patch"
                     ]

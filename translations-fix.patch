@@ -1,0 +1,105 @@
+From a6e369025b811aa5ecac9a11d9b21b128a7012ce Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Wed, 4 May 2022 17:42:36 +0200
+Subject: [PATCH 1/3] build: Fix translations not working
+
+ENABLE_NLS was never set after the port to meson, so force enable it, as
+any reasonable OS will have NLS support nowadays.
+---
+ config.h.meson | 3 +++
+ meson.build    | 1 +
+ 2 files changed, 4 insertions(+)
+
+diff --git a/config.h.meson b/config.h.meson
+index 811a501df..e84138db5 100644
+--- a/config.h.meson
++++ b/config.h.meson
+@@ -8,6 +8,9 @@
+ /* Define to the gettext package name. */
+ #mesondefine GETTEXT_PACKAGE
+ 
++/* Define to enable NLS */
++#mesondefine ENABLE_NLS
++
+ /* Define if you have GNU fwrite_unlocked */
+ #mesondefine HAVE_GNU_FWRITE_UNLOCKED
+ 
+diff --git a/meson.build b/meson.build
+index 0a40c47c9..71d38c508 100644
+--- a/meson.build
++++ b/meson.build
+@@ -178,6 +178,7 @@ endif
+ cdata.set('GETTEXT_PACKAGE', '"rhythmbox"')
+ cdata.set('PACKAGE', '"rhythmbox"')
+ cdata.set('VERSION', '@0@'.format(meson.project_version()))
++cdata.set('ENABLE_NLS', 1)
+ 
+ # Needed so that we can build static libraries and later link them into
+ # shared libraries.
+-- 
+2.35.1
+
+
+From 8f419d62e61deb31e46c2b565fedbcd2adf9cac4 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Wed, 4 May 2022 17:51:42 +0200
+Subject: [PATCH 2/3] metadata: Fix missing declaration for GNOMELOCALEDIR
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+metadata/rb-metadata-dbus-service.c: In function ‘main’:
+metadata/rb-metadata-dbus-service.c:365:42: error: ‘GNOMELOCALEDIR’ undeclared (first use in this function)
+  365 |         bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+      |                                          ^~~~~~~~~~~~~~
+---
+ metadata/meson.build | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/metadata/meson.build b/metadata/meson.build
+index fbbe68e90..76d200785 100644
+--- a/metadata/meson.build
++++ b/metadata/meson.build
+@@ -56,6 +56,7 @@ rbmetadata_dep = declare_dependency(
+ # service
+ 
+ executable('rhythmbox-metadata', metadata_service_sources,
++  c_args: metadata_c_args,
+   link_with: rbmetadata_lib,
+   dependencies: [librb_dep, rbmetadata_dep],
+   install: true,
+-- 
+2.35.1
+
+
+From be754f5a63fc3218e15fafe95472834f2513066d Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Wed, 4 May 2022 17:52:23 +0200
+Subject: [PATCH 3/3] shell: Fix missing declaration for GNOMELOCALEDIR
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+shell/main.c: In function ‘main’:
+shell/main.c:69:42: error: ‘GNOMELOCALEDIR’ undeclared (first use in this function)
+   69 |         bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+      |                                          ^~~~~~~~~~~~~~
+---
+ shell/meson.build | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/shell/meson.build b/shell/meson.build
+index 23db7921a..0f843f8bc 100644
+--- a/shell/meson.build
++++ b/shell/meson.build
+@@ -148,6 +148,7 @@ endif
+ 
+ executable('rhythmbox', 'main.c',
+   dependencies: rhythmbox_dependencies,
++  c_args: shell_c_args,
+   include_directories: [ pluginsinc ],
+   install: true,
+   install_rpath: rpath
+-- 
+2.35.1
+

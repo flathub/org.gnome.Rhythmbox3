@@ -230,7 +230,8 @@
                     "type": "patch",
                     "paths": [
                         "0001-data-Update-appdata-screenshot-to-an-existing-one.patch",
-                        "0001-build-Update-icon-cache-and-schemas-on-install.patch"
+                        "0001-build-Update-icon-cache-and-schemas-on-install.patch",
+                        "translations-fix.patch"
                     ]
                 }
             ]

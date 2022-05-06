@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Rhythmbox3",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
     "tags": [],

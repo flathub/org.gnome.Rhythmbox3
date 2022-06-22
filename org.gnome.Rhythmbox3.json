@@ -152,7 +152,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/totem-pl-parser.git",
-                    "commit": "c6c1c51aefeac28499da9fe5cec4af2278ed1564"
+                    "commit": "489d88e9aac584ee245964d69955ab7aba163fc6"
                 }
             ],
             "cleanup": [ "/include" ]

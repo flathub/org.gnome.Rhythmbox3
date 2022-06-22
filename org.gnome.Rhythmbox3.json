@@ -224,15 +224,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "commit": "b5489ded82a4b209234b84f4252c31e58f2c2527"
-                },
-                {
-                    "type": "patch",
-                    "paths": [
-                        "0001-data-Update-appdata-screenshot-to-an-existing-one.patch",
-                        "0001-build-Update-icon-cache-and-schemas-on-install.patch",
-                        "translations-fix.patch"
-                    ]
+                    "commit": "1b14819fc3937d9f03edd8dac092228cb4589240"
                 }
             ]
         }

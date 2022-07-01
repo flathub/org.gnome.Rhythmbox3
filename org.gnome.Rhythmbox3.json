@@ -225,6 +225,12 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
                     "commit": "e5966ab124c59906264ffd06b6069bb1c85ecf1f"
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "0001-backends-Fix-traceback-in-artsearch-plugin.patch"
+                    ]
                 }
             ]
         }

@@ -5,8 +5,8 @@
         {
             "type": "git",
             "url": "https://gitlab.gnome.org/GNOME/gupnp-av.git",
-            "commit": "b4dd4dd0b3f369680367a6c9efb1f9d3077ff074",
-            "tag": "gupnp-av-0.12.11"
+            "commit": "86f148ebb920a8113190fd3e6cae636c9fdd3ca7",
+            "tag": "gupnp-av-0.14.1"
         }
     ]
 }

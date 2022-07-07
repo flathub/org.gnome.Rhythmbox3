@@ -58,9 +58,7 @@
         "dleyna/gupnp.json",
         "dleyna/gupnp-av.json",
         "dleyna/gupnp-dlna.json",
-        "dleyna/dleyna-core.json",
-        "dleyna/dleyna-connector-dbus.json",
-        "dleyna/dleyna-server.json",
+        "dleyna/dleyna.json",
         {
             "name": "grilo-plugins",
             "buildsystem": "meson",

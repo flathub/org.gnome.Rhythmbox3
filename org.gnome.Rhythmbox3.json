@@ -6,44 +6,39 @@
     "command": "rhythmbox",
     "tags": [],
     "finish-args": [
-        /* X11 + XShm access */
-        "--share=ipc", "--socket=fallback-x11",
-        /* Wayland access */
+        "--share=ipc",
+        "--socket=fallback-x11",
         "--socket=wayland",
-        /* OpenGL access */
         "--device=dri",
-        /* Needs to talk to the network: */
         "--share=network",
-        /* Play sounds */
         "--socket=pulseaudio",
-        /* Browse user's Music directory */
         "--filesystem=xdg-music",
-        /* Migrate DConf settings from the host */
         "--metadata=X-DConf=migrate-path=/org/gnome/rhythmbox/",
         "--require-version=1.8.0",
-        /* MPRIS */
         "--own-name=org.mpris.MediaPlayer2.rhythmbox",
-        /* media keys */
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        /* libnotify */
         "--talk-name=org.freedesktop.Notifications",
-        /* DAAP broadcast and discovery */
         "--system-talk-name=org.freedesktop.Avahi",
-        /* totem-pl-parser http support, for podcasts and streaming */
-        "--filesystem=xdg-run/gvfsd", "--talk-name=org.gtk.vfs.*",
-        /* See #16 */
+        "--filesystem=xdg-run/gvfsd",
+        "--talk-name=org.gtk.vfs.*",
         "--env=GIO_USE_VOLUME_MONITOR=unix"
     ],
-    "build-options" : {
+    "build-options": {
         "cflags": "-O2 -g",
         "cxxflags": "-O2 -g"
     },
-    "cleanup": [ "/include", "/share/bash-completion" ],
+    "cleanup": [
+        "/include",
+        "/share/bash-completion"
+    ],
     "modules": [
         {
             "name": "grilo",
             "buildsystem": "meson",
-            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false" ],
+            "config-opts": [
+                "-Denable-gtk-doc=false",
+                "-Denable-grl-pls=false"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -52,7 +47,9 @@
                     "tag": "grilo-0.3.14"
                 }
             ],
-            "cleanup": [ "/include" ]
+            "cleanup": [
+                "/include"
+            ]
         },
         "dleyna/gssdp.json",
         "dleyna/gupnp.json",
@@ -88,7 +85,9 @@
                     "tag": "grilo-plugins-0.3.14"
                 }
             ],
-            "cleanup": [ "/include" ]
+            "cleanup": [
+                "/include"
+            ]
         },
         {
             "name": "tdb",
@@ -99,7 +98,10 @@
                     "sha256": "9040b2cce4028e392f063f91bbe76b8b28fecc2b7c0c6071c67b5eb3168e004a"
                 }
             ],
-            "cleanup": [ "/bin", "/include" ]
+            "cleanup": [
+                "/bin",
+                "/include"
+            ]
         },
         {
             "name": "libpeas",
@@ -129,8 +131,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.7.tar.xz",
-                    "sha256": "3fc79408ae1d84b406922fa9319ce005631c95ca0f34b205fad867e8b30e45b1",
+                    "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz",
+                    "sha256": "e97a60cfc00a1c147a674b097bb1422abd9fa78a2d9ce3f3fdcc2e78a34ac5f0",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 9265,
@@ -153,13 +155,16 @@
                     "commit": "489d88e9aac584ee245964d69955ab7aba163fc6"
                 }
             ],
-            "cleanup": [ "/include" ]
+            "cleanup": [
+                "/include"
+            ]
         },
         "shared-modules/intltool/intltool-0.51.json",
-        /* libdmapsharing needs development headers of avahi or howl or libdns_sd */
         {
             "name": "avahi",
-            "cleanup": [ "/bin" ],
+            "cleanup": [
+                "/bin"
+            ],
             "config-opts": [
                 "--with-distro=none",
                 "--disable-libdaemon",
@@ -180,11 +185,10 @@
                 }
             ]
         },
-        /* libdmapsharing needs gee-0.8 */
         {
             "name": "libgee",
-            "build-options" : {
-                "make-install-args" : [
+            "build-options": {
+                "make-install-args": [
                     "girdir=/app/share/gir-1.0",
                     "typelibdir=/app/lib/girepository-1.0"
                 ]
@@ -197,10 +201,11 @@
                 }
             ]
         },
-        /* libdmapsharing is required for DAAP support */
         {
             "name": "libdmapsharing",
-            "config-opts": [ "--disable-tests" ],
+            "config-opts": [
+                "--disable-tests"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -213,7 +218,9 @@
         {
             "name": "rhythmbox",
             "buildsystem": "meson",
-            "config-opts": [ "-Ddaap=enabled" ],
+            "config-opts": [
+                "-Ddaap=enabled"
+            ],
             "post-install": [
                 "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='rhythmbox.desktop;' /app/share/applications/org.gnome.Rhythmbox3.desktop",
                 "rm -rf /app/lib/rhythmbox/plugins/dbus-media-server/"

@@ -94,8 +94,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.samba.org/ftp/tdb/tdb-1.4.2.tar.gz",
-                    "sha256": "9040b2cce4028e392f063f91bbe76b8b28fecc2b7c0c6071c67b5eb3168e004a"
+                    "url": "https://www.samba.org/ftp/tdb/tdb-1.4.8.tar.gz",
+                    "sha256": "8434c9c857d13ce3fa8466f75601f25c3693676b36919f159e0ad6121baf5ce8"
                 }
             ],
             "cleanup": [ "/bin", "/include" ]

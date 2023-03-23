@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Rhythmbox3",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
     "tags": [],
@@ -43,13 +43,13 @@
         {
             "name": "grilo",
             "buildsystem": "meson",
-            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false" ],
+            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false", "-Dsoup3=false" ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/grilo.git",
-                    "commit": "f42014e4c4ba58cff581f202ebec54f044db36f3",
-                    "tag": "grilo-0.3.14"
+                    "commit": "14a4a66d92b78d7db6e872cf09db40fbfb6c470d",
+                    "tag": "grilo-0.3.15"
                 }
             ],
             "cleanup": [ "/include" ]
@@ -69,7 +69,6 @@
                 "-Denable-bookmarks=no",
                 "-Denable-lua-factory=no",
                 "-Denable-metadata-store=no",
-                "-Denable-vimeo=no",
                 "-Denable-tracker=no",
                 "-Denable-tracker3=no",
                 "-Denable-local-metadata=no",
@@ -84,8 +83,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
-                    "commit": "9d2afa38e13ff0ea5ddbc32a32900a3f2f496dc5",
-                    "tag": "grilo-plugins-0.3.14"
+                    "commit": "98cbc65e258209c92a260a7641e4b9df2c9e58fa",
+                    "tag": "grilo-plugins-0.3.15"
                 }
             ],
             "cleanup": [ "/include" ]
@@ -95,8 +94,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.samba.org/ftp/tdb/tdb-1.4.2.tar.gz",
-                    "sha256": "9040b2cce4028e392f063f91bbe76b8b28fecc2b7c0c6071c67b5eb3168e004a"
+                    "url": "https://www.samba.org/ftp/tdb/tdb-1.4.8.tar.gz",
+                    "sha256": "8434c9c857d13ce3fa8466f75601f25c3693676b36919f159e0ad6121baf5ce8"
                 }
             ],
             "cleanup": [ "/bin", "/include" ]
@@ -108,8 +107,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "commit": "f9962a516ead8ce20531d1b23e1b656caecd9274",
-                    "tag": "libpeas-1.24.0"
+                    "commit": "7f245fa5158204621c3469756a951b68a651c4fe",
+                    "tag": "libpeas-1.36.0"
                 }
             ]
         },
@@ -163,11 +162,13 @@
             "config-opts": [
                 "--with-distro=none",
                 "--disable-libdaemon",
+                "--disable-libevent",
                 "--disable-core-docs",
                 "--disable-manpages",
                 "--disable-mono",
                 "--disable-qt3",
                 "--disable-qt4",
+                "--disable-qt5",
                 "--disable-python",
                 "--disable-gtk",
                 "--disable-gtk3"
@@ -175,8 +176,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://avahi.org/download/avahi-0.7.tar.gz",
-                    "sha256": "57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804"
+                    "url": "https://avahi.org/download/avahi-0.8.tar.gz",
+                    "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
                 }
             ]
         },
@@ -192,8 +193,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
-                    "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
+                    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.6.tar.xz",
+                    "sha256": "1bf834f5e10d60cc6124d74ed3c1dd38da646787fbf7872220b8b4068e476d4d"
                 }
             ]
         },

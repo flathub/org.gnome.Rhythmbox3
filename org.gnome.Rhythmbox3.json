@@ -24,8 +24,6 @@
         "--own-name=org.mpris.MediaPlayer2.rhythmbox",
         /* media keys */
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        /* libnotify */
-        "--talk-name=org.freedesktop.Notifications",
         /* DAAP broadcast and discovery */
         "--system-talk-name=org.freedesktop.Avahi",
         /* totem-pl-parser http support, for podcasts and streaming */

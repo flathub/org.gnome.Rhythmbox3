@@ -39,11 +39,10 @@
     },
     "cleanup": [ "/include", "/share/bash-completion" ],
     "modules": [
-        "shared-modules/libsoup/libsoup-2.4.json",
         {
             "name": "grilo",
             "buildsystem": "meson",
-            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false", "-Dsoup3=false" ],
+            "config-opts": [ "-Denable-gtk-doc=false", "-Denable-grl-pls=false", "-Dsoup3=true" ],
             "sources": [
                 {
                     "type": "git",
@@ -206,8 +205,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libdmapsharing.git",
-                    "commit": "a78d2951a4fa15696e1f4880050a4a9ae144348f",
-                    "tag": "LIBDMAPSHARING_3_9_10"
+                    "commit": "2bcf6286fc81ff9c964e5b1bfe918c01a18e98c4",
+                    "tag": "LIBDMAPSHARING_3_9_12"
                 }
             ]
         },

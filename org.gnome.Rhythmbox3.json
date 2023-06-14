@@ -48,8 +48,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/grilo.git",
-                    "commit": "14a4a66d92b78d7db6e872cf09db40fbfb6c470d",
-                    "tag": "grilo-0.3.15"
+                    "commit": "923397361b36e95ddd57cff70ba7b0a8cb8d5e8c",
+                    "tag": "grilo-0.3.16"
                 }
             ],
             "cleanup": [ "/include" ]
@@ -83,8 +83,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
-                    "commit": "98cbc65e258209c92a260a7641e4b9df2c9e58fa",
-                    "tag": "grilo-plugins-0.3.15"
+                    "commit": "dff5616464b8e46f58b84a67cc945f3a6c72dd73",
+                    "tag": "grilo-plugins-0.3.16"
                 }
             ],
             "cleanup": [ "/include" ]

@@ -225,7 +225,12 @@
                 {
                     "type": "patch",
                     "path": "0001-notification-Fix-libnotify-warning-in-Flatpak.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "appdata-fixes.patch"
                 }
+
             ]
         }
     ]

@@ -223,6 +223,10 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
                     "commit": "1b4df30fcd66d2e9ff5a934f1ca3bfcbf3402847"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-notification-Fix-libnotify-warning-in-Flatpak.patch"
                 }
             ]
         }

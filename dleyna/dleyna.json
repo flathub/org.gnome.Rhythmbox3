@@ -12,7 +12,7 @@
         {
             "type": "git",
             "url": "https://gitlab.gnome.org/World/dLeyna.git",
-            "commit": "db67c3071af7d708a66ac6f13c31b052078955b2"
+            "tag": "v0.8.3"
         }
     ]
 }

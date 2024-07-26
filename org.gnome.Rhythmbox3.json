@@ -33,7 +33,17 @@
         "cflags": "-O2 -g",
         "cxxflags": "-O2 -g"
     },
-    "cleanup": [ "/include", "/share/bash-completion" ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/peas-demo",
+        "/lib/pkgconfig",
+        "/share/bash-completion",
+        "/share/man",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
     "modules": [
         {
             "name": "grilo",

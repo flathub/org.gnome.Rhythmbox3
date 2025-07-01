@@ -1,0 +1,29 @@
+From 7700cd63fc569abb858a9cb134ced01b9ce0d292 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 1 Jul 2025 12:23:19 +0200
+Subject: [PATCH] main: Fix window not being matched to application
+
+Using the application ID ensures that Wayland compositors could match the
+window with the application and show the appropriate icon for them.
+
+See:
+https://docs.gtk.org/gtk4/migrating-3to4.html#set-a-proper-application-id
+---
+ shell/main.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/shell/main.c b/shell/main.c
+index aeec072632e7..ffa318b32e49 100644
+--- a/shell/main.c
++++ b/shell/main.c
+@@ -70,6 +70,7 @@ main (int argc, char **argv)
+ 
+ 	textdomain (GETTEXT_PACKAGE);
+ 
++	g_set_prgname (RB_APP_ICON);
+ 	g_set_application_name (_("Rhythmbox"));
+ 	gtk_window_set_default_icon_name (RB_APP_ICON);
+ 
+-- 
+2.50.0
+

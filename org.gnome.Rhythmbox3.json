@@ -241,6 +241,10 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
                     "tag": "v3.4.8"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-main-Fix-window-not-being-matched-to-application.patch"
                 }
             ]
         }

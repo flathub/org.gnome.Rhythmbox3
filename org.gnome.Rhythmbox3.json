@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Rhythmbox3",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "rhythmbox",
     "finish-args": [
@@ -134,6 +134,7 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                 "-DBUILD_STATIC=0"
             ],
             "cleanup": [
@@ -223,7 +224,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/rhythmbox.git",
-                    "tag": "3.4.9"
+                    "tag": "3.4.9",
+                    "commit": "9c13c655112880841ad550c7553c87c645045c1d"
                 }
             ]
         }

@@ -10,3 +10,4 @@ sources:
   - type: git
     url: https://gitlab.gnome.org/World/dLeyna.git
     tag: v0.8.3
+    commit: 69e5fd6d6314d3987e7b68c8150397cf626950fb

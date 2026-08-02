@@ -1,0 +1,10 @@
+name: gupnp-dlna
+buildsystem: meson
+config-opts:
+  - -Dgtk_doc=false
+  - -Dtest_media=false
+sources:
+  - type: git
+    url: https://gitlab.gnome.org/GNOME/gupnp-dlna.git
+    commit: cc09daae47ef0e030895edbeba58636c76f53b3d
+    tag: gupnp-dlna-0.12.0

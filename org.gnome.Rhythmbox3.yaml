@@ -195,5 +195,5 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/rhythmbox.git
-        tag: 3.4.9
-        commit: 9c13c655112880841ad550c7553c87c645045c1d
+        tag: 3.5.0
+        commit: e7c317b84099e8c934abc6d59c961d35af2ed431

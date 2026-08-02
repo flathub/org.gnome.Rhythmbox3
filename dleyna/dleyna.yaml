@@ -1,0 +1,12 @@
+name: dleyna
+buildsystem: meson
+config-opts:
+  - -Dserver_name=org.gnome.Rhythmbox3.dleyna-server
+  - -Dconnector=true
+  - -Dbuild_server=true
+  - -Dman_pages=false
+  - -Ddocs=false
+sources:
+  - type: git
+    url: https://gitlab.gnome.org/World/dLeyna.git
+    tag: v0.8.3

@@ -10,3 +10,4 @@ sources:
   - type: git
     url: https://gitlab.gnome.org/GNOME/gssdp.git
     tag: gssdp-1.6.3
+    commit: 28c388aa45698dcc09ba24e8de849653e9eedf8c
